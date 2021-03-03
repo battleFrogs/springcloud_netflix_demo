@@ -5,12 +5,13 @@ spring:
     name: config-server
 
 
-# http 请求地址 与资源文件的映射关系  http://localhost:8888/foo/dev
-#  /{application}/{profile}[/{label}]
+# http 请求地址 与资源文件的映射关系  http://localhost:8888/config-client/dev/master
+#  /{application}/{profile}[/{label}]  用的比较多
 #  /{application}-{profile}.yml
 #  /{label}/{application}-{profile}.yml
 #  /{application}-{profile}.properties
 #  /{label}/{application}-{profile}.properties
+
   # 读取git仓库上的文件
   cloud:
     config:
@@ -20,16 +21,22 @@ spring:
           search-paths: respo  # git仓库地址下的相对地址 多个用逗号","分割。
           username:
           password:
+#        native:
+#          search-locations: classpath:/config-server  # 读取本地文件
+#（windows /// linux /）   file:///D:/spring-cloud-demo/config-server/src/main/resources/config-server/gitee
       label: master
 
 
+  #  # 如果使用读取本地文件
+#  profiles:
+#    active: native
 
+
+# 配置高可用服务注册指定
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
 
-#  # 如果使用读取本地文件
-#  profiles:
-#    active: local
+
