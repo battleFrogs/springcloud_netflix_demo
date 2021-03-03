@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    # eureka服务端的实例名称
+    hostname: localhost
+  client:
+    #    通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: eurka-server   # 声明该服务名
