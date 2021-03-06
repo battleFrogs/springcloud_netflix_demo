@@ -17,14 +17,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/forezp/SpringcloudConfig/
+          uri: https://github.com/battleFrogs/springcloudPropertiesFile/
           search-paths: respo  # git仓库地址下的相对地址 多个用逗号","分割。
           username:
           password:
 #        native:
 #          search-locations: classpath:/config-server  # 读取本地文件
 #（windows /// linux /）   file:///D:/spring-cloud-demo/config-server/src/main/resources/config-server/gitee
-      label: master
+      label: main
 
 
   #  # 如果使用读取本地文件
