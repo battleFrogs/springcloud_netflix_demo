@@ -19,6 +19,8 @@
         <module>config_client</module>
         <module>server_one</module>
         <module>server_two</module>
+        <module>gateway_first_sight</module>
+        <module>gateway_limit_speed</module>
     </modules>
 
     <groupId>com.gjc</groupId>
